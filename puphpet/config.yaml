@@ -177,11 +177,12 @@ apache:
         - rewrite
     vhosts:
         av_sqywrqpbzfjr:
-            servername: dynamic.dev
+            servername: dynamic-ssl.dev
             serveraliases:
                 - www.dynamic.dev
             docroot: /var/www/public
             port: '80'
+                - www.dynamic-ssl.dev
             docroot: /var/www/dynamic
             port: '443'
             setenv:
@@ -190,15 +191,13 @@ apache:
                 - 'Authorization "(.*)" HTTP_AUTHORIZATION=$1'
             custom_fragment: ''
             ssl: '1'
-            ssl_cert: LETSENCRYPT
-            ssl_key: LETSENCRYPT
-            ssl_chain: LETSENCRYPT
-            ssl_certs_dir: LETSENCRYPT
+            ssl_cert: ''
+            ssl_key: ''
+            ssl_chain: ''
+            ssl_certs_dir: ''
             ssl_protocol: ''
             ssl_cipher: ''
             directories:
-                avd_xau05nsw6i2p:
-                    path: /var/www/public
                 avd_f5u6168y57h9:
                     path: /var/www/dynamic
                     options:
@@ -218,9 +217,9 @@ apache:
                             provider: filesmatch
                     provider: directory
 letsencrypt:
-    install: '1'
+    install: '0'
     settings:
-        email: info@dynamic.dev
+        email: info@dynamic-ssl.dev
     domains: {  }
 php:
     install: '1'
