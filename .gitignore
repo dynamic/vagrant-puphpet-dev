@@ -3,3 +3,4 @@ puphpet/config-custom.yaml
 .vagrant
 dynamic
 html
+puphpet/files/dot/ssh/
