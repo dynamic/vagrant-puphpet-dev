@@ -2,18 +2,20 @@
 
 ## Overview
 
-PHP 5.6 on Ubuntu 14.04
+PHP 7 on Ubuntu 14.04
 
 ## Use
 
-`git clone git@gitlab.com:dynamic-inc/vagrant-dev.git dynamic-dev`
+`git clone git@gitlab.com:dynamic-inc/vagrant-dev.git dynamic-php7`
 
-`cd dynamic-dev` 
+`cd dynamic-php7` 
+
+`git checkout php7`
 
 `vagrant up`
 
-set `192.168.56.101` to `dynamic.dev` in your hosts file
+set `192.168.56.102` to `dynamic-php7.dev` in your hosts file
 
-create sites in directory `public`  that is created on initial vagrant up. ex: `dynamic-dev/public/project-name/index.html`
+create sites in directory `public` that is created on initial vagrant up. ex: `dynamic-php7/public/project-name/index.html`
 
-view sites in the browser via `http://dynamic.dev/project-name`
+view sites in the browser via `http://dynamic-php7.dev/project-name`
