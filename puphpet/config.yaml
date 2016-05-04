@@ -20,10 +20,10 @@ vagrantfile:
                         update_guest_tools: 0
                 machines:
                     vflm_v622ujsgpn2v:
-                        id: dynamic_dev
-                        hostname: dynamic.dev
+                        id: dynamic_windows
+                        hostname: dynamic-windows.dev
                         network:
-                            private_network: 192.168.56.101
+                            private_network: 192.168.56.103
                             forwarded_port:
                                 vflmnfp_hr3ie50yq73i:
                                     host: '8449'
@@ -177,10 +177,10 @@ apache:
         - rewrite
     vhosts:
         av_rl56ynihbuqb:
-            servername: dynamic.dev
+            servername: dynamic-windows.dev
             serveraliases:
-                - www.dynamic.dev
-            docroot: /var/www/public
+                - www.dynamic-windows.dev
+            docroot: /var/www/dynamic
             port: '80'
             setenv:
                 - 'APP_ENV dev'
