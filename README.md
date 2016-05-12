@@ -6,9 +6,9 @@ PHP 5.6 on Ubuntu 14.04
 
 ## Use
 
-`git clone git@gitlab.com:dynamic-inc/vagrant-dev.git dynamic-dev`
+`git clone git@gitlab.com:dynamic-inc/vagrant-dev.git dynamic-windows`
 
-`cd dynamic-dev` 
+`cd dynamic-windows` 
 
 `git checkout windows`
 
@@ -16,7 +16,7 @@ PHP 5.6 on Ubuntu 14.04
 
 set `192.168.56.103` to `dynamic-windows.dev` in your hosts file
 
-create sites in directory `public`  that is created on initial vagrant up. ex: `dynamic-dev/public/project-name/index.html`
+create sites in directory `public`  that is created on initial vagrant up. ex: `dynamic-windows/public/project-name/index.html`
 
 view sites in the browser via `http://dynamic-windows.dev/project-name`
 

@@ -180,7 +180,7 @@ apache:
             servername: dynamic-windows.dev
             serveraliases:
                 - www.dynamic-windows.dev
-            docroot: /var/www/dynamic
+            docroot: /var/www/public
             port: '80'
             setenv:
                 - 'APP_ENV dev'
@@ -196,7 +196,7 @@ apache:
             ssl_cipher: ''
             directories:
                 avd_6b0tnilg8zj8:
-                    path: /var/www/dynamic
+                    path: /var/www/public
                     options:
                         - Indexes
                         - FollowSymlinks
