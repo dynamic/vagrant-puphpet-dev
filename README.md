@@ -14,6 +14,6 @@ PHP 5.6 on Ubuntu 14.04
 
 set `192.168.56.101` to `dynamic.dev` in your hosts file
 
-create sites in directory `dynamic`  that is created on initial vagrant up. ex: `dynamic-dev/dynamic/project-name/index.html`
+create sites in directory `public`  that is created on initial vagrant up. ex: `dynamic-dev/public/project-name/index.html`
 
 view sites in the browser via `http://dynamic.dev/project-name`

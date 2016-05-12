@@ -180,7 +180,7 @@ apache:
             servername: dynamic.dev
             serveraliases:
                 - www.dynamic.dev
-            docroot: /var/www/dynamic
+            docroot: /var/www/public
             port: '80'
             setenv:
                 - 'APP_ENV dev'
@@ -196,7 +196,7 @@ apache:
             ssl_cipher: ''
             directories:
                 avd_xau05nsw6i2p:
-                    path: /var/www/dynamic
+                    path: /var/www/public
                     options:
                         - Indexes
                         - FollowSymlinks
