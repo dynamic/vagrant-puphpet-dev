@@ -6,19 +6,19 @@ PHP 5.6 on Ubuntu 14.04
 
 ## Use
 
-`git clone git@gitlab.com:dynamic-inc/vagrant-dev.git dynamic-windows`
+`git clone git@gitlab.com:dynamic-inc/vagrant-dev.git dynamic-windows-ssl`
 
-`cd dynamic-windows` 
+`cd dynamic-windows-ssl` 
 
-`git checkout windows`
+`git checkout windows-ssl`
 
 `vagrant up`
 
-set `192.168.56.103` to `dynamic-windows.dev` in your hosts file
+set `192.168.56.105` to `dynamic-windows-ssl.dev` in your hosts file
 
-create sites in directory `public`  that is created on initial vagrant up. ex: `dynamic-windows/public/project-name/index.html`
+create sites in directory `public`  that is created on initial vagrant up. ex: `dynamic-windows-ssl/public/project-name/index.html`
 
-view sites in the browser via `http://dynamic-windows.dev/project-name`
+view sites in the browser via `https://dynamic-windows-ssl.dev/project-name`
 
 There is an issue with Windows running Vagrant 1.8.1 - to fix:
 - open `platform.rb` (possibly located in: `C:\HashiCorp\Vagrant\embedded\gems\gems\vagrant-1.8.1\lib\vagrant\util`)

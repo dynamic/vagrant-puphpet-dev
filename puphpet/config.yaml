@@ -19,13 +19,13 @@ vagrantfile:
                         check_guest_tools: 0
                         update_guest_tools: 0
                 machines:
-                    vflm_v622ujsgpn2v:
-                        id: dynamic_windows
-                        hostname: dynamic-windows.dev
+                    vflm_l744emzxnngy:
+                        id: dynamic_windows_ssl
+                        hostname: dynamic-windows-ssl.dev
                         network:
-                            private_network: 192.168.56.103
+                            private_network: 192.168.56.105
                             forwarded_port:
-                                vflmnfp_hr3ie50yq73i:
+                                vflmnfp_eko5ldbzucao:
                                     host: '8449'
                                     guest: '22'
                         memory: '512'
@@ -38,7 +38,7 @@ vagrantfile:
                     - '--verbose'
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
         synced_folder:
-            vflsf_4j8cq25r3q8a:
+            vflsf_3edfbo3sb50s:
                 source: ./
                 target: /var/www
                 sync_type: default
@@ -114,7 +114,7 @@ nginx:
         names_hash_bucket_size: 128
     upstreams: {  }
     vhosts:
-        nxv_kjhbski1u0cb:
+        nxv_nm0vc5mz7u8x:
             server_name: awesome.dev
             server_aliases:
                 - www.awesome.dev
@@ -134,7 +134,7 @@ nginx:
             rewrite_to_https: '1'
             spdy: '1'
             locations:
-                nxvl_9151uf580euv:
+                nxvl_j8kgiilmwdkm:
                     location: /
                     try_files:
                         - $uri
@@ -145,7 +145,7 @@ nginx:
                     fastcgi_split_path: ''
                     proxy: ''
                     proxy_redirect: ''
-                nxvl_3x3ectlqbzjw:
+                nxvl_5kug5jc4w8o8:
                     location: '~ \.php$'
                     try_files:
                         - $uri
@@ -176,18 +176,18 @@ apache:
         - proxy_fcgi
         - rewrite
     vhosts:
-        av_rl56ynihbuqb:
-            servername: dynamic-windows.dev
+        av_dapgil17ygah:
+            servername: dynamic-windows-ssl.dev
             serveraliases:
-                - www.dynamic-windows.dev
+                - www.dynamic-windows-ssl.dev
             docroot: /var/www/public
-            port: '80'
+            port: '443'
             setenv:
                 - 'APP_ENV dev'
             setenvif:
                 - 'Authorization "(.*)" HTTP_AUTHORIZATION=$1'
             custom_fragment: ''
-            ssl: '0'
+            ssl: '1'
             ssl_cert: ''
             ssl_key: ''
             ssl_chain: ''
@@ -195,7 +195,7 @@ apache:
             ssl_protocol: ''
             ssl_cipher: ''
             directories:
-                avd_6b0tnilg8zj8:
+                avd_v7vg5ev97m7g:
                     path: /var/www/public
                     options:
                         - Indexes
@@ -207,7 +207,7 @@ apache:
                         - 'all granted'
                     custom_fragment: ''
                     files_match:
-                        avdfm_jf92poj2tt94:
+                        avdfm_ea2ikugrtjl6:
                             path: \.php$
                             sethandler: 'proxy:fcgi://127.0.0.1:9000'
                             custom_fragment: ''
@@ -242,7 +242,7 @@ php:
     fpm_ini:
         error_log: /var/log/php-fpm.log
     fpm_pools:
-        phpfp_udjqu0wqxrd2:
+        phpfp_j2b2cb2hccj3:
             ini:
                 prefix: www
                 listen: '127.0.0.1:9000'
@@ -285,7 +285,7 @@ drush:
 ruby:
     install: '1'
     versions:
-        rv_h4ifxohe6p6y:
+        rv_wonwiqjxhp5w:
             default: '1'
             bundler: '1'
             version: 1.9.3
@@ -325,15 +325,15 @@ mariadb:
         override_options: {  }
     adminer: '1'
     users:
-        mariadbnu_hw1n7t7ia68f:
+        mariadbnu_32gub0k80g45:
             name: dynamic
             password: dynamic
     databases:
-        mariadbnd_faq7q9isnppo:
+        mariadbnd_3rqjpauhunnp:
             name: dynamic
             sql: ''
     grants:
-        mariadbng_d0gpgbltmlxt:
+        mariadbng_stm8sjbqf1a7:
             user: dynamic
             table: '*.*'
             privileges:
@@ -346,15 +346,15 @@ mysql:
         override_options: {  }
     adminer: 0
     users:
-        mysqlnu_9cmx8tmgjixy:
+        mysqlnu_ltfzq7513vcr:
             name: dbuser
             password: '123'
     databases:
-        mysqlnd_122yj86giciu:
+        mysqlnd_b0zozmlpaaz8:
             name: dbname
             sql: ''
     grants:
-        mysqlng_k6doj2y0su9z:
+        mysqlng_tykcrutc4ndl:
             user: dbuser
             table: '*.*'
             privileges:
@@ -419,7 +419,7 @@ elastic_search:
         version: 2.3.1
         java_install: true
     instances:
-        esi_o585kpbggkoo:
+        esi_d8pde0dg10p6:
             name: es-01
 solr:
     install: '0'
