@@ -19,13 +19,13 @@ vagrantfile:
                         check_guest_tools: 0
                         update_guest_tools: 0
                 machines:
-                    vflm_xl27mha0qsl7:
-                        id: dynamic_dev
-                        hostname: dynamic.dev
+                    vflm_715y2t9f62be:
+                        id: dynamic_sqlite
+                        hostname: dynamic-sqlite.dev
                         network:
-                            private_network: 192.168.56.101
+                            private_network: 192.168.56.106
                             forwarded_port:
-                                vflmnfp_qbc3281hesxq:
+                                vflmnfp_pslgqgobfuan:
                                     host: '8449'
                                     guest: '22'
                         memory: '512'
@@ -38,7 +38,7 @@ vagrantfile:
                     - '--verbose'
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
         synced_folder:
-            vflsf_s3giptytoa39:
+            vflsf_wqu6vjv9j5e1:
                 source: ./
                 target: /var/www
                 sync_type: nfs
@@ -114,7 +114,7 @@ nginx:
         names_hash_bucket_size: 128
     upstreams: {  }
     vhosts:
-        nxv_8oh5fmej400i:
+        nxv_1jqko6ko2g49:
             server_name: awesome.dev
             server_aliases:
                 - www.awesome.dev
@@ -134,7 +134,7 @@ nginx:
             rewrite_to_https: '1'
             spdy: '1'
             locations:
-                nxvl_2kr30ws5u2py:
+                nxvl_x17ryryw4555:
                     location: /
                     try_files:
                         - $uri
@@ -145,7 +145,7 @@ nginx:
                     fastcgi_split_path: ''
                     proxy: ''
                     proxy_redirect: ''
-                nxvl_0hk2hjxdt7w9:
+                nxvl_r7slxw8b4t3h:
                     location: '~ \.php$'
                     try_files:
                         - $uri
@@ -176,10 +176,10 @@ apache:
         - proxy_fcgi
         - rewrite
     vhosts:
-        av_dqzksn2p5j9r:
-            servername: dynamic.dev
+        av_8ggz4w0l3ye2:
+            servername: dynamic-sqlite.dev
             serveraliases:
-                - www.dynamic.dev
+                - www.dynamic-sqlite.dev
             docroot: /var/www/public
             port: '80'
             setenv:
@@ -195,7 +195,7 @@ apache:
             ssl_protocol: ''
             ssl_cipher: ''
             directories:
-                avd_65lft2wl5az0:
+                avd_2zbgaifpsxbj:
                     path: /var/www/public
                     options:
                         - Indexes
@@ -207,7 +207,7 @@ apache:
                         - 'all granted'
                     custom_fragment: ''
                     files_match:
-                        avdfm_5awg4z32lame:
+                        avdfm_nrz7hhlhou85:
                             path: \.php$
                             sethandler: 'proxy:fcgi://127.0.0.1:9000'
                             custom_fragment: ''
@@ -242,7 +242,7 @@ php:
     fpm_ini:
         error_log: /var/log/php-fpm.log
     fpm_pools:
-        phpfp_46puqb2pgt1v:
+        phpfp_nf4a7ku82glv:
             ini:
                 prefix: www
                 listen: '127.0.0.1:9000'
@@ -285,7 +285,7 @@ drush:
 ruby:
     install: '1'
     versions:
-        rv_evwtc053jjgy:
+        rv_7no5tb85m61x:
             default: '1'
             bundler: '1'
             version: 1.9.3
@@ -325,15 +325,15 @@ mariadb:
         override_options: {  }
     adminer: '1'
     users:
-        mariadbnu_f3jr14im2vuo:
+        mariadbnu_hf1w9ggmf898:
             name: dynamic
             password: dynamic
     databases:
-        mariadbnd_mvm48p8yx2g3:
+        mariadbnd_lrftjudbab73:
             name: dynamic
             sql: ''
     grants:
-        mariadbng_wz1c2id5sunm:
+        mariadbng_n29lg1mh13tc:
             user: dynamic
             table: '*.*'
             privileges:
@@ -346,15 +346,15 @@ mysql:
         override_options: {  }
     adminer: 0
     users:
-        mysqlnu_n84v5g16uvu5:
+        mysqlnu_ldclf1iah313:
             name: dbuser
             password: '123'
     databases:
-        mysqlnd_pyjhg1s5va4g:
+        mysqlnd_j9ihnlm051u4:
             name: dbname
             sql: ''
     grants:
-        mysqlng_6q30niieica1:
+        mysqlng_719umag3fsxy:
             user: dbuser
             table: '*.*'
             privileges:
@@ -384,8 +384,8 @@ redis:
     settings:
         port: '6379'
 sqlite:
-    install: '0'
-    adminer: 0
+    install: '1'
+    adminer: '1'
     databases: {  }
 mailhog:
     install: '1'
@@ -419,7 +419,7 @@ elastic_search:
         version: 2.3.1
         java_install: true
     instances:
-        esi_zj2nb2axclmc:
+        esi_d74m5krpxldi:
             name: es-01
 solr:
     install: '0'
