@@ -6,7 +6,7 @@ PHP 5.6 on Ubuntu 14.04
 
 ## Use
 
-`git clone git@gitlab.com:dynamic-inc/vagrant-dev.git dynamic-dev`
+`git clone git@github.com:dynamic/vagrant-puphpet-dev.git dynamic-dev`
 
 `cd dynamic-dev` 
 
