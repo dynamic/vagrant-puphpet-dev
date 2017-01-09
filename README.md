@@ -6,7 +6,7 @@ PHP 7 on Ubuntu 14.04
 
 ## Use
 
-`git clone git@gitlab.com:dynamic-inc/vagrant-dev.git dynamic-php7`
+`git clone git@github.com:dynamic/vagrant-puphpet-dev.git dynamic-php7`
 
 `cd dynamic-php7` 
 
